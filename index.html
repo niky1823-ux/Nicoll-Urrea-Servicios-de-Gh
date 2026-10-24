@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Consultoría en talento humano potenciada con inteligencia artificial: selección, desarrollo y gestión estratégica de personas.">
+  <title>Nexo Humano | Talento que impulsa el futuro</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --navy: #2F4F90;
+      --blue: #4A6FB1;
+      --pale-blue: #A9C4E8;
+      --light: #E8E8E8;
+      --gray: #B8B8B8;
+      --red: #B81F3A;
+      --ink: #232323;
+      --white: #fff;
+      --shadow: 0 12px 35px rgba(35, 35, 35, 0.09);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    /* Encabezado y navegación principal */
+    .site-header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid rgba(47, 79, 144, 0.1);
+      backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--navy);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .brand span span {
+      display: block;
+      color: var(--gray);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .main-nav a {
+      transition: color 180ms ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      color: var(--red);
+    }
+
+    /* Presentación principal con imagen de fondo */
+    .hero {
+      position: relative;
+      min-height: 570px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background-color: var(--navy);
+      background-image:
+        linear-gradient(90deg, rgba(25, 43, 78, 0.94) 0%, rgba(25, 43, 78, 0.79) 48%, rgba(25, 43, 78, 0.32) 100%),
+        url("oficina-reunion.jpg");
+      background-position: center, 68% 48%;
+      background-size: cover;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      padding-block: 88px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--pale-blue);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 660px;
+      margin: 0;
+      font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+      font-weight: 600;
+      letter-spacing: -0.055em;
+      line-height: 1.12;
+    }
+
+    .hero h1 span {
+      color: var(--pale-blue);
+    }
+
+    .hero-copy {
+      max-width: 570px;
+      margin: 22px 0 30px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.02rem;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 23px;
+      border: 0;
+      border-radius: 10px;
+      background: var(--pale-blue);
+      color: var(--navy);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--blue);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .button:active,
+    .button.is-clicked {
+      background: var(--red);
+      color: var(--white);
+      transform: translateY(1px);
+    }
+
+    .button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 3px;
+    }
+
+    /* Catálogo de los seis servicios de talento humano */
+    .section {
+      padding-block: 88px;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 42px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--blue);
+    }
+
+    .section-heading h2 {
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+      letter-spacing: -0.045em;
+      line-height: 1.2;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: #666;
+      font-size: 0.96rem;
+    }
+
+    .catalog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .catalog-card {
+      overflow: hidden;
+      border: 1px solid rgba(184, 184, 184, 0.35);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .catalog-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(35, 35, 35, 0.14);
+    }
+
+    .catalog-card img {
+      width: 100%;
+      aspect-ratio: 1 / 0.82;
+      object-fit: cover;
+      object-position: top center;
+      background: var(--light);
+    }
+
+    .card-copy {
+      padding: 20px 21px 23px;
+    }
+
+    .card-copy h3 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .card-copy p {
+      margin: 0;
+      color: #666;
+      font-size: 0.87rem;
+    }
+
+    /* Servicios de consultoría y acompañamiento estratégico */
+    .services {
+      background: #f5f7fb;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      padding: 29px 26px;
+      border: 1px solid rgba(74, 111, 177, 0.12);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .service-number {
+      display: inline-grid;
+      width: 45px;
+      height: 45px;
+      place-items: center;
+      margin-bottom: 19px;
+      border-radius: 14px;
+      background: #e9eff8;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .service-card:nth-child(2) .service-number {
+      background: #f9e9ed;
+      color: var(--red);
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.1rem;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* Formulario accesible para solicitar información */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      align-items: start;
+      gap: 56px;
+    }
+
+    .contact-intro .eyebrow {
+      color: var(--blue);
+    }
+
+    .contact-intro h2 {
+      margin: 0 0 14px;
+      color: var(--navy);
+      font-size: clamp(2rem, 3.5vw, 2.65rem);
+      letter-spacing: -0.045em;
+      line-height: 1.2;
+    }
+
+    .contact-intro p {
+      margin: 0;
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .contact-form {
+      padding: 30px;
+      border: 1px solid rgba(184, 184, 184, 0.35);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .form-field {
+      margin-bottom: 18px;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 0.86rem;
+      font-weight: 600;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--gray);
+      border-radius: 10px;
+      background: #fcfcfd;
+      color: var(--ink);
+      font: inherit;
+      font-size: 0.88rem;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(74, 111, 177, 0.12);
+      outline: none;
+    }
+
+    .form-field textarea {
+      min-height: 135px;
+      resize: vertical;
+    }
+
+    .form-feedback {
+      min-height: 1.6em;
+      margin: 14px 0 0;
+      color: var(--navy);
+      font-size: 0.84rem;
+    }
+
+    /* Pie de página con redes sociales y derechos reservados */
+    .site-footer {
+      padding-block: 28px;
+      background: #202f4b;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-inner p {
+      margin: 0;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a:hover,
+    .social-links a:focus-visible {
+      color: var(--pale-blue);
+    }
+
+    .social-links .location-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 8px;
+      background: var(--pale-blue);
+      color: var(--navy);
+      font-weight: 600;
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    .social-links .location-link:hover,
+    .social-links .location-link:focus-visible {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* Control para regresar al inicio después de desplazarse */
+    .back-to-top {
+      position: fixed;
+      z-index: 9;
+      right: 22px;
+      bottom: 22px;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      font: inherit;
+      font-size: 1.25rem;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 180ms ease, transform 180ms ease, background-color 180ms ease;
+    }
+
+    .back-to-top.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover,
+    .back-to-top:focus-visible {
+      background: var(--red);
+    }
+
+    @media (max-width: 1024px) {
+      .hero {
+        min-height: 520px;
+        background-position: center, 64% center;
+      }
+
+      .catalog-grid,
+      .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .contact-layout {
+        gap: 34px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 32px, 480px);
+      }
+
+      .header-inner {
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 4px 14px;
+        padding-block: 10px;
+      }
+
+      .brand img {
+        width: 46px;
+        height: 40px;
+      }
+
+      .brand {
+        font-size: 0.95rem;
+      }
+
+      .main-nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 4px;
+        font-size: 0.78rem;
+      }
+
+      .hero {
+        min-height: 490px;
+        background-position: center, 68% center;
+      }
+
+      .hero-content {
+        padding-block: 64px;
+      }
+
+      .hero-copy {
+        font-size: 0.92rem;
+      }
+
+      .section {
+        padding-block: 64px;
+      }
+
+      .section-heading {
+        margin-bottom: 30px;
+        text-align: left;
+      }
+
+      .catalog-grid,
+      .service-grid,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-layout {
+        gap: 25px;
+      }
+
+      .contact-form {
+        padding: 22px 18px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .back-to-top {
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado con logo y navegación a las secciones principales -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Nexo Humano, ir al inicio">
+        <img src="Logo.jpg" alt="">
+        <span>Nexo Humano<span>Talento con propósito</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero con imagen de fondo, propuesta de valor y llamado a la acción -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-content">
+        <p class="eyebrow">Gerencia de talento humano + inteligencia artificial</p>
+        <h1 id="hero-title">El futuro de tu organización empieza con <span>su talento.</span></h1>
+        <p class="hero-copy">Estrategias humanas, decisiones respaldadas por datos y soluciones de IA para atraer, desarrollar y cuidar a las personas que hacen crecer tu organización.</p>
+        <a class="button" href="#contacto">Conversemos sobre tu equipo</a>
+      </div>
+    </section>
+
+    <!-- Catálogo visual de seis servicios especializados -->
+    <section class="section" id="catalogo" aria-labelledby="catalog-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Soluciones integrales</p>
+          <h2 id="catalog-title">Personas y equipos preparados para avanzar</h2>
+          <p>Un catálogo de servicios que conecta cada etapa del ciclo de talento con las necesidades de tu organización.</p>
+        </div>
+        <div class="catalog-grid">
+          <article class="catalog-card">
+            <img src="portatil-escritorio.jpg" alt="Computadora y portátil sobre un escritorio de oficina">
+            <div class="card-copy">
+              <h3>Selección por competencias</h3>
+              <p>Identificamos perfiles y seleccionamos talento alineado con cada rol y con la cultura de tu organización.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="espacio-trabajo.jpg" alt="Sala de reuniones moderna con mesa y sillas vacías">
+            <div class="card-copy">
+              <h3>Desarrollo y formación</h3>
+              <p>Diseñamos rutas de aprendizaje y experiencias prácticas para fortalecer las habilidades de tus equipos.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="oficina-moderna.jpg" alt="Espacio de oficina con sillones y lámpara de diseño">
+            <div class="card-copy">
+              <h3>Clima y bienestar</h3>
+              <p>Escuchamos a las personas y convertimos sus perspectivas en acciones que mejoran el entorno laboral.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="portatil-estrategia.jpg" alt="Portátil y computadora en un escritorio de trabajo">
+            <div class="card-copy">
+              <h3>Desempeño y crecimiento</h3>
+              <p>Definimos indicadores y conversaciones de desempeño que impulsan el desarrollo y los resultados.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="escritorio-oficina.jpg" alt="Pasillo de una oficina moderna con salas de vidrio">
+            <div class="card-copy">
+              <h3>Cambio y cultura</h3>
+              <p>Acompañamos a líderes y equipos para facilitar la adaptación y fortalecer una cultura compartida.</p>
+            </div>
+          </article>
+          <article class="catalog-card">
+            <img src="sala-ejecutiva.jpg" alt="Sala de reuniones vacía con mesa de madera y ventanales">
+            <div class="card-copy">
+              <h3>Retención y compromiso</h3>
+              <p>Desarrollamos estrategias para cuidar el talento, fortalecer el compromiso y conservar el conocimiento.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tres tarjetas explican el enfoque de los servicios de consultoría -->
+    <section class="section services" id="servicios" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Un enfoque diferente</p>
+          <h2 id="services-title">Tecnología con criterio humano</h2>
+          <p>Integramos experiencia en gestión de personas y herramientas inteligentes con responsabilidad y propósito.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-number" aria-hidden="true">01</span>
+            <h3>Estrategia a tu medida</h3>
+            <p>Comprendemos tus objetivos, desafíos y cultura antes de diseñar una solución de talento pertinente y sostenible.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number" aria-hidden="true">02</span>
+            <h3>IA aplicada con responsabilidad</h3>
+            <p>Incorporamos datos y herramientas de inteligencia artificial como apoyo, con supervisión profesional y enfoque centrado en las personas.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-number" aria-hidden="true">03</span>
+            <h3>Acompañamiento cercano</h3>
+            <p>Trabajamos junto a tus líderes y colaboradores para llevar las ideas a la práctica y dar continuidad a cada avance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario de contacto con campos asociados y confirmación accesible -->
+    <section class="section" id="contacto" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-intro">
+          <p class="eyebrow">Hablemos de tu organización</p>
+          <h2 id="contact-title">Construyamos un mejor futuro para tu equipo.</h2>
+          <p>Cuéntanos qué necesitas y encontraremos juntos una forma de potenciar el talento de tu organización.</p>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-field">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Escribe tu nombre completo" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="nombre@empresa.com" required>
+          </div>
+          <div class="form-field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" placeholder="Cuéntanos brevemente cómo podemos ayudarte" required></textarea>
+          </div>
+          <button class="button" type="submit">Enviar mensaje</button>
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página con derechos reservados y enlaces sociales -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="current-year"></span> Nexo Humano. Todos los derechos reservados.</p>
+      <nav class="social-links" aria-label="Redes sociales">
+        <a class="location-link" href="https://www.google.com/maps/search/?api=1&amp;query=Cali%2C%20Colombia" target="_blank" rel="noopener noreferrer" aria-label="Ver ubicación de Cali, Colombia en Google Maps">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="none">
+            <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          Cali, Colombia
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://wa.me/?text=Hola%2C%20me%20interesan%20sus%20servicios%20de%20talento%20humano." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Botón flotante para regresar al inicio al desplazarse -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver arriba" title="Volver arriba">
+    <span aria-hidden="true">&uarr;</span>
+  </button>
+
+  <script>
+    // Confirma que el formulario está completo; esta página estática no transmite datos a un servidor.
+    const contactForm = document.querySelector('#contact-form');
+    const formFeedback = document.querySelector('#form-feedback');
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) {
+        return;
+      }
+
+      const name = new FormData(contactForm).get('name').trim();
+      formFeedback.textContent = `¡Gracias, ${name}! El formulario se completó correctamente. Esta página de demostración todavía no envía el mensaje a un servidor.`;
+      contactForm.reset();
+    });
+
+    // Aplica un cambio breve de color al hacer clic en los botones de acción.
+    document.querySelectorAll('.button').forEach((button) => {
+      button.addEventListener('click', () => {
+        button.classList.add('is-clicked');
+        window.setTimeout(() => button.classList.remove('is-clicked'), 450);
+      });
+    });
+
+    // Muestra el acceso para volver al inicio solo después de desplazarse.
+    const backToTop = document.querySelector('#back-to-top');
+
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('is-visible', window.scrollY > 400);
+    }, { passive: true });
+
+    backToTop.addEventListener('click', () => {
+      document.querySelector('#inicio').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.querySelector('#current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
